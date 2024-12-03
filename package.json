@@ -1,7 +1,7 @@
 {
   "name": "life-of-hwaksin-memory",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "sddev",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
@@ -60,5 +60,5 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.4.0"
   },
-  "description": "An Ionic project"
+  "description": "An Bible Memory Project"
 }
