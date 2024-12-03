@@ -1,0 +1,7 @@
+{
+  "name": "life-of-hwaksin-memory",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
