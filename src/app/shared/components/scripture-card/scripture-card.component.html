@@ -4,9 +4,63 @@
     <ion-card-subtitle>{{ scripture.verse }}</ion-card-subtitle>
   </ion-card-header>
   <ion-card-content>
-    {{ scripture.content }}
+    <p [ngClass]="{ 'hidden-text': hideWords }" class="scripture-text">
+      <ng-container *ngFor="let word of scripture.content.split(' ')">
+        <span [ngClass]="{ highlight: currentFocus === 'all' || currentFocus === word }">{{ word }}</span>
+      </ng-container>
+    </p>
   </ion-card-content>
-  <ion-button expand="block" (click)="toggleMemorize()">
-    {{ isMemorized ? "암송 완료" : "암송 시작" }}
-  </ion-button>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button expand="block" (click)="toggleMemorize()">
+          <ion-icon [name]="isMemorized ? 'checkmark-circle' : 'play-circle'"></ion-icon>
+          {{ isMemorized ? "암송 완료" : "암송 시작" }}
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button expand="block" (click)="toggleHideWords()">
+          <ion-icon [name]="hideWords ? 'eye' : 'eye-off'"></ion-icon>
+          {{ hideWords ? "보이기" : "숨기기" }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button expand="block" (click)="playAudio()">
+          <ion-icon name="volume-high"></ion-icon>
+          오디오
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button expand="block" (click)="animateText()">
+          <ion-icon name="pulse"></ion-icon>
+          강조
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-segment (ionChange)="focusOn($event)">
+    <ion-segment-button value="all">
+      <ion-icon name="apps"></ion-icon>
+      <ion-label>전체</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="first">
+      <ion-icon name="arrow-forward"></ion-icon>
+      <ion-label>첫 단어</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="last">
+      <ion-icon name="arrow-back"></ion-icon>
+      <ion-label>마지막 단어</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-card-content>
+    <h2>암송 통계</h2>
+    <ion-progress-bar [value]="memorizationProgress / 100"></ion-progress-bar>
+    <p>암송 진행도: {{ memorizationProgress.toFixed(1) }}%</p>
+    <p>암송 시간: {{ timeSpentMemorizing.toFixed(1) }}초</p>
+  </ion-card-content>
 </ion-card>
