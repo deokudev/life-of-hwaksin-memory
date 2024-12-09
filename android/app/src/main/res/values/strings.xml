@@ -4,4 +4,6 @@
     <string name="title_activity_main">life-of-hwaksin-memory</string>
     <string name="package_name">io.ionic.starter</string>
     <string name="custom_url_scheme">io.ionic.starter</string>
+    <!-- addMob -->
+    <string name="admob_app_id">ca-app-pub-6594298326624225~4609422361</string>
 </resources>

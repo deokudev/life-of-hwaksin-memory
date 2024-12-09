@@ -1,12 +1,22 @@
-import { Component } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { SCRIPTURES } from "../shared/constants/scriptures";
+import { AdService } from "../shared/services/ad.service";
 
 @Component({
   selector: "app-home",
   templateUrl: "home.page.html",
   styleUrls: ["home.page.scss"],
 })
-export class HomePage {
+export class HomePage implements OnInit, OnDestroy {
   scriptures = SCRIPTURES;
-  constructor() {}
+  constructor(private adService: AdService) {}
+
+  async ngOnInit() {
+    await this.adService.initializeAd();
+    await this.adService.showBanner();
+  }
+
+  ngOnDestroy() {
+    this.adService.removeBanner();
+  }
 }

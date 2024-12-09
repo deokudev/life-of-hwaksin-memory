@@ -1,0 +1,7 @@
+export const AD_UNIT_IDS = {
+  BANNER: {
+    ANDROID: "ca-app-pub-6594298326624225/8547100704",
+    IOS: "ca-app-pub-6594298326624225/3573975626",
+  },
+  TEST_DEVICES: [],
+};
