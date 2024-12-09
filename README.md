@@ -24,6 +24,11 @@ sudo npm i @capacitor/android
 sudo npx cap add android
 sudo npm i @capacitor/ios
 sudo npx cap add ios
+
+sudo npm run build
+sudo chmod -R 777 ./ && npx cap sync
+sudo npx cap run android -l
+sudo npx cap run ios -l
 ```
 
 7. 광고 추가
@@ -54,22 +59,3 @@ sudo npm i @capacitor-community/admob
      - 배너 광고(IOS)
        - 앱 ID : ca-app-pub-6594298326624225~2014487537
        - 광고 단위 ID : ca-app-pub-6594298326624225/3573975626
-
-주요 설정 사항:
-
-- AdMob 계정 생성이 필요합니다 (https://admob.google.com/)
-- 실제 광고 ID로 교체해야 합니다
-- 테스트 시에는 isTesting: true로 설정하고, 실제 배포 시에는 false로 변경
-- iOS의 경우 추가 설정이 필요할 수 있습니다
-
-광고 종류:
-
-- 배너 광고: 화면 하단에 고정되어 표시
-- 전면 광고: 전체 화면을 차지하는 광고 (사용자 행동에 따라 표시)
-
-실제 앱 배포 전 주의사항:
-
-- 테스트 모드를 비활성화 (isTesting: false)
-- 실제 광고 ID 사용
-- AdMob 정책 준수 확인
-- 광고 표시 빈도 조절 (사용자 경험 고려)

@@ -1,4 +1,4 @@
-export const SCRIPTURES = [
+export const SCRIPTURES_OF_HWAKSIN = [
   {
     title: "내재하시는 그리스도",
     verse: "시편 119:11",
@@ -46,3 +46,5 @@ export const SCRIPTURES = [
       '예수께서 다가와서, 그들에게 말씀하셨다. "나는 하늘과 땅의 모든 권세를 받았다. 그러므로 너희는 가서, 모든 민족을 제자로 삼아서, 아버지와 아들과 성령의 이름으로 세례를 주고, 내가 너희에게 명령한 모든 것을 그들에게 가르쳐 지키게 하여라. 보아라, 내가 세상 끝 날까지 항상 너희와 함께 있을 것이다."',
   },
 ];
+
+export const SCRIPTURES_OF_LIFE = [];

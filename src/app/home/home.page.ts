@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { SCRIPTURES } from "../shared/constants/scriptures";
+import { SCRIPTURES_OF_HWAKSIN } from "../shared/constants/SCRIPTURES_OF_HWAKSIN";
 import { AdService } from "../shared/services/ad.service";
 
 @Component({
@@ -8,7 +8,7 @@ import { AdService } from "../shared/services/ad.service";
   styleUrls: ["home.page.scss"],
 })
 export class HomePage implements OnInit, OnDestroy {
-  scriptures = SCRIPTURES;
+  SCRIPTURES_OF_HWAKSIN = SCRIPTURES_OF_HWAKSIN;
   constructor(private adService: AdService) {}
 
   async ngOnInit() {
